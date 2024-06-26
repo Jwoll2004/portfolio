@@ -87,7 +87,7 @@ const Projects = forwardRef((props, ref) => {
               Code
             </a>
             <a 
-			href="https://jwacker.dev" 
+			href="https://portfolio-jwacker.vercel.app/" 
 			target="_blank" 
 			rel="noreferrer"
 			className="outline-link"
