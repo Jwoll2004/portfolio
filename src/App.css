@@ -1,8 +1,18 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   line-height: 1.5;
   color: var(--foreground);
   background-color: var(--background);
   font-family: GatwickRegular, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -13,25 +23,36 @@ a {
   text-decoration: none;
 }
 
+h3 {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+  width: fit-content;
+}
+
+li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
 .transparent-link {
   color: var(--primary);
 }
 
 .outline-link {
-  border: 2px solid var(--primary);
+  border: 2px solid var(--foreground);
   padding: 10px 20px;
   border-radius: var(--radius);
 }
 
 .opaque-link {
   font-family: GatwickBold, sans-serif;
-  border: 1px solid hsl(var(--foreground));
   padding: 10px 20px;
   border-radius: var(--radius);
   background-color: var(--primary);
   color: var(--primary-foreground);
-  border: 1px solid var(--foreground);
-
+  border: 2px solid var(--foreground);
 }
 
 /* hover animation in buttons */
@@ -85,8 +106,9 @@ a {
     --foreground: white;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-    --primary: 	#8ffcff;
+    --primary: rgb(143, 252, 255);
     --primary-foreground: #16122F;
+    --primary-shadow: rgba(143, 252, 255, 0.2); 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --accent: 217.2 32.6% 17.5%;
