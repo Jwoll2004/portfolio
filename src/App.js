@@ -3,6 +3,7 @@ import './App.css';
 import Hero from './components/Hero';
 import TechnicalSkills from './components/TechnicalSkills';
 import Projects from './components/Projects';
+import CodingStats from './components/CodingStats';
 
 function App() {
   const projectsRef = useRef(null);
@@ -11,6 +12,7 @@ function App() {
       <Hero projectsRef={projectsRef} />
       <TechnicalSkills />
       <Projects ref={projectsRef} />
+      <CodingStats />
     </div>
   );
 }

@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  gap: 120px;
+  gap: 80px;
 }
 
 a {
@@ -52,6 +52,10 @@ ul {
 
 p {
   font-family: GatwickSans;
+}
+
+.icon {
+	height: 40px;
 }
 
 .transparent-link {
@@ -105,7 +109,7 @@ p {
   gap: 50px;
 }
 
-.projects {
+.vertical-card-container {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -121,6 +125,20 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 300px;
+}
+
+.stats-container {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  padding: 20px 80px;
+  font-family: GatwickRegular;
+}
+
+.vertical-card-container .card {
+  max-width: 1200px;
+  gap: 20px;
 }
 
 @font-face {

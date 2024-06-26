@@ -9,7 +9,7 @@ const Projects = forwardRef((props, ref) => {
   return (
     <div className="section" ref={ref}>
       <h1>My Projects</h1>
-      <div className="projects card-container">
+      <div className="vertical-card-container">
         <div className="card">
           <div className="icon-text">
             <img src={resume} alt="Resume Builder" className="icon" />

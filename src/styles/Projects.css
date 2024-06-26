@@ -10,11 +10,6 @@
   gap: 20px;
 }
 
-.projects .card {
-  max-width: 1200px;
-  gap: 20px;
-}
-
 .project-links {
   display: flex;
   gap: 20px;
