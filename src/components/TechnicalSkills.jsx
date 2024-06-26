@@ -21,10 +21,10 @@ import mysql from "../assets/images/sql.png";
 
 const TechnicalSkills = () => {
   return (
-    <div className="technical-skills">
+    <div className="section">
       <h1>Technical Skills</h1>
-      <div className="skills-card-container">
-        <div className="skills-card">
+      <div className="card-container">
+        <div className="card">
           <div className="icon-text">
             <img src={proglang} alt="Programming Languages" className="icon" />
             <h3>Programming Languages</h3>
@@ -50,7 +50,7 @@ const TechnicalSkills = () => {
             </li>
           </ul>
         </div>
-        <div className="skills-card">
+        <div className="card">
           <h3>
             <div className="icon-text">
               <img src={web} alt="Web Development" className="icon" />
@@ -78,7 +78,7 @@ const TechnicalSkills = () => {
             </li>
           </ul>
         </div>
-        <div className="skills-card">
+        <div className="card">
           <h3>
             <div className="icon-text">
               <img src={core} alt="Core Subjects" className="icon" />
@@ -118,7 +118,7 @@ const TechnicalSkills = () => {
             </li>
           </ul>
         </div>
-        <div className="skills-card">
+        <div className="card">
           <h3>
             <div className="icon-text">
               <img src={tech} alt="Tools & Technologies" className="icon" />

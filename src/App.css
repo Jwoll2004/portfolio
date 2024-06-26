@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  gap: 120px;
 }
 
 a {
@@ -21,19 +22,35 @@ a {
   color: var(--foreground);
   font-family: GatwickBold, sans-serif;
   text-decoration: none;
+  transition: color 0.2s;
+
+  cursor: pointer;
 }
 
 h3 {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+  font-family: GatwickBold, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: fit-content;
 }
 
 li {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--foreground);
+  border-radius: var(--radius);
+  padding: 5px 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+p {
+  font-family: GatwickSans;
 }
 
 .transparent-link {
@@ -55,8 +72,6 @@ li {
   border: 2px solid var(--foreground);
 }
 
-/* hover animation in buttons */
-
 .opaque-link:hover {
   background-color: var(--background);
   color: var(--foreground);
@@ -69,6 +84,43 @@ li {
 
 .transparent-link:hover {
   color: var(--foreground);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  align-items: center;
+  gap: 50px;
+}
+
+.section h1 {
+  font-family: GatwickBold;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 20px;
+  padding-top: 0;
+  box-shadow: 0 0 80px 0 var(--primary-shadow);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
 }
 
 @font-face {
@@ -102,13 +154,13 @@ li {
   }
 
   .dark {
-    --background: #16122F;
+    --background: #16122f;
     --foreground: white;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --primary: rgb(143, 252, 255);
-    --primary-foreground: #16122F;
-    --primary-shadow: rgba(143, 252, 255, 0.2); 
+    --primary-foreground: #16122f;
+    --primary-shadow: rgba(143, 252, 255, 0.2);
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --accent: 217.2 32.6% 17.5%;
