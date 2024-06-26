@@ -50,7 +50,7 @@ function Hero({ projectsRef }) {
             <a href="#projects" className="hero-cta-link opaque-link" onClick={scrollToProjects}>
               My Projects
             </a>
-            <a href="https://docs.google.com/document/d/1UGOB68g4iL1_iRASbiw7FtIxn5kNOOVsWckC69iSIiY/edit?usp=sharing" className="hero-cta-link outline-link" target="_blank" rel="noreferrer">
+            <a href="https://docs.google.com/document/d/1QjCiUKMlM2qyn69KUYnCEJLGmz5DOpxT8uToxOCLtQw/edit?usp=sharing" className="hero-cta-link outline-link" target="_blank" rel="noreferrer">
               Resume
             </a>
           </div>
