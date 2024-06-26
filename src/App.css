@@ -38,6 +38,7 @@ h3 {
 li {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   border: 1px solid var(--foreground);
   border-radius: var(--radius);
@@ -101,7 +102,7 @@ p {
 .card-container {
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: 50px;
 }
 
 .projects {
@@ -120,7 +121,6 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 300px;
 }
 
 @font-face {

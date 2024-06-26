@@ -7,11 +7,24 @@
 	gap: 10px;
 }
 
+.skills .card {
+	width: 275px;
+}
+
+.skill-heading {
+	height: 50px;
+}
+
 .skills-list {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 	align-items: center;
+
+}
+
+.skills-list li {
+	width: 250px;
 }
 
 h3 .icon {

@@ -12,6 +12,7 @@
 
 .projects .card {
   max-width: 1200px;
+  gap: 20px;
 }
 
 .project-links {

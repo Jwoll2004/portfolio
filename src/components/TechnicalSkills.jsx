@@ -23,12 +23,14 @@ const TechnicalSkills = () => {
   return (
     <div className="section">
       <h1>Technical Skills</h1>
-      <div className="card-container">
+      <div className="skills card-container">
         <div className="card">
-          <div className="icon-text">
+          <h3>
+          <div className="skill-heading icon-text">
             <img src={proglang} alt="Programming Languages" className="icon" />
-            <h3>Programming Languages</h3>
+            Programming Languages
           </div>
+          </h3>
           <ul className="skills-list">
             <li>
               <div className="icon-text">
@@ -52,7 +54,7 @@ const TechnicalSkills = () => {
         </div>
         <div className="card">
           <h3>
-            <div className="icon-text">
+            <div className="skill-heading icon-text">
               <img src={web} alt="Web Development" className="icon" />
               Web Development
             </div>
@@ -80,7 +82,7 @@ const TechnicalSkills = () => {
         </div>
         <div className="card">
           <h3>
-            <div className="icon-text">
+            <div className="skill-heading icon-text">
               <img src={core} alt="Core Subjects" className="icon" />
               Core Subjects
             </div>
@@ -120,7 +122,7 @@ const TechnicalSkills = () => {
         </div>
         <div className="card">
           <h3>
-            <div className="icon-text">
+            <div className="skill-heading icon-text">
               <img src={tech} alt="Tools & Technologies" className="icon" />
               Tools & Technologies
             </div>
