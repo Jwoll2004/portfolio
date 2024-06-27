@@ -13,7 +13,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  gap: 80px;
 }
 
 a {
@@ -54,6 +53,10 @@ p {
   font-family: GatwickSans;
 }
 
+.bold-text {
+  font-family: GatwickBold;
+}
+
 .icon {
 	height: 40px;
 }
@@ -92,11 +95,16 @@ p {
 }
 
 .section {
+  align-self: center;
   display: flex;
   flex-direction: column;
-  padding: 0 30px;
+  padding: 40 30px;
   align-items: center;
   gap: 50px;
+
+  border-bottom: 2px solid var(--foreground);
+  width: 80%;
+  padding-bottom: 40px;
 }
 
 .section h1 {
@@ -128,13 +136,6 @@ p {
   min-width: 300px;
 }
 
-.stats-container {
-  display: flex;
-  gap: 80px;
-  justify-content: center;
-  padding: 20px 80px;
-  font-family: GatwickRegular;
-}
 
 .vertical-card-container .card {
   max-width: 1200px;
@@ -176,9 +177,9 @@ p {
     --foreground: white;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-    --primary: rgb(143, 252, 255);
-    --primary-foreground: #16122f;
-    --primary-shadow: rgba(143, 252, 255, 0.2);
+    --primary: rgb(100, 250, 255);
+    --primary-foreground: rgba(100, 250, 255, 0.2);
+    --primary-shadow: rgba(100, 250, 255, 0.2);
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --accent: 217.2 32.6% 17.5%;

@@ -1,10 +1,17 @@
 .hero {
+  align-self: center;
   display: flex;
   flex-direction: column;
 
   background-color: hsl(var(--background));
   color: var(--foreground);
   font-size: 12px;
+  padding-bottom: 40px;
+  
+  /* 80% width border at bottom */
+  border-bottom: 2px solid var(--foreground);
+  width: 80%;
+
 }
 
 .header {

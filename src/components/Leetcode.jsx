@@ -43,8 +43,12 @@ const GeneralProfile = () => {
         <>
           <img src={profile.avatar} alt="Avatar" className="avatar" />
           <h2>{profile.name}</h2>
-          <p>Username: {profile.username}</p>
-          <p>Ranking: {profile.ranking}</p>
+          <p>
+            Username: <span className="stat-data">{profile.username}</span>
+          </p>
+          <p>
+            Ranking: <span className="stat-data">{profile.ranking}</span>
+          </p>
         </>
       )}
     </div>
@@ -84,14 +88,23 @@ const ContestStats = () => {
   }
 
   return (
-    <div className="contest-stats">
+    <div className="stats">
       <h3 className="outline-link">Contest Stats</h3>
-      <p>Total contests attended: {contestData.contestAttend}</p>
-      {/* rounded off rating */}
-      <p>Rating: {Math.round(contestData.contestRating)}</p>
       <p>
-        Global Rank: {contestData.contestGlobalRanking} /{" "}
-        {contestData.totalParticipants}
+        Total contests attended:{" "}
+        <span className="stat-data">{contestData.contestAttend}</span>
+      </p>
+      <p>
+        Rating:{" "}
+        <span className="stat-data">
+          {Math.round(contestData.contestRating)}
+        </span>
+      </p>
+      <p>
+        Global Rank:{" "}
+        <span className="stat-data">
+          {contestData.contestGlobalRanking} / {contestData.totalParticipants}
+        </span>
       </p>
     </div>
   );
@@ -130,12 +143,97 @@ const ProblemStats = () => {
   }
 
   return (
-    <div className="problem-stats">
+    <div className="stats">
       <h3 className="outline-link">Problem Stats</h3>
-      <p>Total problems solved: {problemData.solvedProblem}</p>
-      <p>Easy: {problemData.easySolved}</p>
-      <p>Medium: {problemData.mediumSolved}</p>
-      <p>Hard: {problemData.hardSolved}</p>
+      <p>
+        Total problems solved:{" "}
+        <span className="stat-data">{problemData.solvedProblem}</span>
+      </p>
+      <p>
+        Easy: <span className="stat-data">{problemData.easySolved}</span>
+      </p>
+      <p>
+        Medium: <span className="stat-data">{problemData.mediumSolved}</span>
+      </p>
+      <p>
+        Hard: <span className="stat-data">{problemData.hardSolved}</span>
+      </p>
+    </div>
+  );
+};
+
+const RecentContests = () => {
+  const [contestData, setContestData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchContestData = async () => {
+      try {
+        const response = await fetch(`${LeetAPI}${username}/contest`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setContestData(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContestData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading Recent Contests...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  // sort contests by date newest to oldest
+  const recentContests = contestData?.contestParticipation?.slice().reverse().slice(0, 3) || [];
+
+
+  return (
+    <div className="recent-contests">
+      <h3 className="outline-link">Recent Contests</h3>
+      {recentContests.length === 0 ? (
+        <p>No recent contests found.</p>
+      ) : (
+        recentContests.map((contest) => (
+          <div key={contest.contest.title} className="contest">
+            <p className="bold-text">{contest.contest.title}</p>
+
+            <div className="contest-details">
+              <p>
+                Date:{" "}
+                <span className="stat-data">
+                  {new Date(contest.contest.startTime*1000).toISOString().split("T")[0]}
+                </span>
+              </p>
+              <p>
+                Rank:{" "}
+                <span className="stat-data">Math.round({contest.ranking})</span>
+              </p>
+              <p>
+                Rating:{" "}
+                <span className="stat-data">{Math.round(contest.rating)}</span>
+              </p>
+              <p>
+                Problems Solved:{" "}
+                <span className="stat-data">
+                  {" "}
+                  {contest.problemsSolved} / {contest.totalProblems}
+                </span>
+              </p>
+            </div>
+          </div>
+        ))
+      )}
     </div>
   );
 };
@@ -153,6 +251,8 @@ const Leetcode = () => {
         <ContestStats />
         <ProblemStats />
       </div>
+        
+      <RecentContests />
     </div>
   );
 };
