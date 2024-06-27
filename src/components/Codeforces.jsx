@@ -9,6 +9,7 @@ const Codeforces = () => {
   const [profileData, setProfileData] = useState(null);
   const [contestData, setContestData] = useState(null);
   const [problemData, setProblemData] = useState(null);
+  const [recentContestData, setRecentContestData] = useState(null); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -33,6 +34,7 @@ const Codeforces = () => {
           throw new Error("Network response was not ok");
         }
         const contestResult = await contestResponse.json();
+        setRecentContestData(contestResult.result.reverse().slice().slice(0, 3) || []);  
         setContestData(
           contestResult.result.sort((a, b) => b.newRating - a.newRating)
         );
@@ -96,6 +98,8 @@ const Codeforces = () => {
     }
   }
   maxStreak = Math.max(maxStreak, currentStreak);
+
+  const recentContests = recentContestData || [];
 
   return (
     <div className="card stats-card">
@@ -168,21 +172,35 @@ const Codeforces = () => {
       </div>
         <div className="recent-contests">
           <h3 className="outline-link">Recent Contests</h3>
-          <ul>
-            {contestData.slice(0, 5).map((contest) => (
-              <li key={contest.contestId}>
-                <a
-                  href={`https://codeforces.com/contest/${contest.contestId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {contest.contestName}
-                </a>
-                <span className="stat-data">{contest.newRating}</span>
-              </li>
-            ))}
-          </ul>
-          
+          {recentContests.length === 0 ? (
+            <p>No recent contests found.</p>
+          ) : (
+            recentContests.map((contest) => (
+              <div key={contest.contestId} className="contest">
+                <p className="bold-text">{contest.contestName}</p>
+
+                <div className="contest-details">
+                  <p>
+                    Date:{" "}
+                    <span className="stat-data">
+                      {new Date(contest.ratingUpdateTimeSeconds * 1000)
+                        .toISOString()
+                        .split("T")[0]}
+                    </span>
+                  </p>
+                  <p>
+                    Rank:{" "}
+                    <span className="stat-data">{contest.rank}</span>
+                  </p>
+                  <p>
+                    New Rating:{" "}
+                    <span className="stat-data">{contest.newRating}</span>
+                  </p>
+                </div>
+              </div>
+            ))
+          )
+          }
         </div>
     </div>
   );

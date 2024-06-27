@@ -1,61 +1,74 @@
 .stat-data {
-	font-family: GatwickSans;
-	color: var(--primary);
+  font-family: GatwickSans;
+  color: var(--primary);
 }
 
-.avatar{
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	margin: 0 auto;
-	display: block;
-	margin-top: 20px;
-	border: 2px solid var(--foreground);
-	box-shadow: 0 0 40px 0 var(--primary-shadow);
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  border: 2px solid var(--foreground);
+  box-shadow: 0 0 40px 0 var(--primary-shadow);
 }
 
 .avatar-name {
-	padding: 10px 40px;
-	background-color: var(--primary-foreground);
-	border-radius: var(--radius);
+  padding: 10px 40px;
+  background-color: var(--primary-foreground);
+  border-radius: var(--radius);
 }
 
 .stats-container {
-	display: flex;
-	justify-content: center;
-	font-family: GatwickRegular;
-  }
-
-  .stats {
-	padding: 50px;
-	border-right: 1px solid var(--foreground);
+  display: flex;
+  justify-content: center;
+  font-family: GatwickRegular;
 }
 
+.stats {
+  padding: 50px;
+  border-right: 1px solid var(--foreground);
+}
 
+/* last .stats inside .stats-container */
 
-.contest{
-	padding-right: 20px;
-	border-right: 1px solid var(--foreground);
+.stats:last-child {
+  border-right: none;
+}
+
+.contest {
+  padding-right: 20px;
+  border-right: 1px solid var(--foreground);
+}
+
+.contest:last-child {
+  border-right: none;
 }
 
 .contest-details {
-	display: flex;
-	flex-direction: column;
-	margin-left: 30px;
-	gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  gap: 10px;
 }
 
 .recent-contests p {
-	margin: 0;
+  margin: 0;
 }
 
 .recent-contests {
-	display: flex;
-	gap: 40px;
-	padding: 5px;
-	padding-top: 20px;
+  display: flex;
+  gap: 40px;
+  padding: 5px;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.recent-contests h3 {
+  height: min-content;
 }
 
 .contest > p {
-	padding-bottom: 5px;
+  padding-bottom: 5px;
 }

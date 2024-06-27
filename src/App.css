@@ -21,7 +21,7 @@ a {
   color: var(--foreground);
   font-family: GatwickBold, sans-serif;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.5s;
 
   cursor: pointer;
 }
@@ -69,6 +69,9 @@ p {
   border: 2px solid var(--foreground);
   padding: 10px 20px;
   border-radius: var(--radius);
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .opaque-link {
@@ -76,8 +79,9 @@ p {
   padding: 10px 20px;
   border-radius: var(--radius);
   background-color: var(--primary);
-  color: var(--primary-foreground);
+  color: var(--background);
   border: 2px solid var(--foreground);
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .opaque-link:hover {
@@ -87,7 +91,7 @@ p {
 
 .outline-link:hover {
   background-color: var(--primary);
-  color: var(--primary-foreground);
+  color: var(--background);
 }
 
 .transparent-link:hover {
@@ -114,7 +118,7 @@ p {
 .card-container {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 40px;
 }
 
 .vertical-card-container {

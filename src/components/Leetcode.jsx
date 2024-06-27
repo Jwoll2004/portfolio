@@ -217,7 +217,7 @@ const RecentContests = () => {
               </p>
               <p>
                 Rank:{" "}
-                <span className="stat-data">Math.round({contest.ranking})</span>
+                <span className="stat-data">{Math.round(contest.ranking)}</span>
               </p>
               <p>
                 Rating:{" "}
