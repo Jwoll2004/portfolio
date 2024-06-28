@@ -87,6 +87,11 @@ const ContestStats = () => {
     return <div>Error: {error.message}</div>;
   }
 
+  // get max rating out of all ratings:
+  const maxRating = contestData.contestParticipation.reduce((acc, curr) => {
+    return Math.max(acc, curr.rating);
+  }, 0);
+
   return (
     <div className="stats">
       <h3 className="outline-link">Contest Stats</h3>
@@ -95,9 +100,9 @@ const ContestStats = () => {
         <span className="stat-data">{contestData.contestAttend}</span>
       </p>
       <p>
-        Rating:{" "}
+        Max Rating:{" "}
         <span className="stat-data">
-          {Math.round(contestData.contestRating)}
+          {Math.round(maxRating)}
         </span>
       </p>
       <p>
