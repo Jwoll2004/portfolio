@@ -7,6 +7,7 @@ body {
   color: var(--foreground);
   background-color: var(--background);
   font-family: GatwickRegular, sans-serif;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .App {
@@ -66,6 +67,7 @@ p {
 }
 
 .outline-link {
+  text-align: center;
   border: 2px solid var(--foreground);
   padding: 10px 20px;
   border-radius: var(--radius);
@@ -102,13 +104,12 @@ p {
   align-self: center;
   display: flex;
   flex-direction: column;
-  padding: 40 30px;
   align-items: center;
   gap: 50px;
 
   border-bottom: 2px solid var(--foreground);
-  width: 80%;
-  padding-bottom: 40px;
+  width: 90%;
+  padding-bottom: 60px;
 }
 
 .section h1 {
@@ -128,7 +129,7 @@ p {
 }
 
 .card {
-  border: 2px solid var(--primary);
+  border: 2px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
   padding-top: 0;
@@ -137,13 +138,12 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 300px;
+  min-width: 250px;
 }
 
 
 .vertical-card-container .card {
-  max-width: 1200px;
-  gap: 20px;
+  max-width: 800px;
 }
 
 @font-face {
@@ -163,12 +163,15 @@ p {
 
 @layer base {
   :root {
-    --background: white;
-    --foreground: 222.2 84% 4.9%;
+    --background: rgb(255, 255, 255);
+    --foreground: rgb(22, 18, 47);
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --primary: rgb(100, 219, 255);
+    --primary-foreground: rgba(100, 250, 255, 0.2);
+    --primary-shadow: rgba(0, 0, 0, 0.2);
+    --primary-underline: rgba(100, 250, 255, 0.7);
+    --border: rgb(0, 0, 0);
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --accent: 210 40% 96.1%;
@@ -177,18 +180,19 @@ p {
   }
 
   .dark {
-    --background: #16122f;
-    --foreground: white;
+    --background: rgb(22, 18, 47);
+    --foreground: rgb(255, 255, 255);
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --primary: rgb(100, 250, 255);
     --primary-foreground: rgba(100, 250, 255, 0.2);
     --primary-shadow: rgba(100, 250, 255, 0.2);
+    --primary-underline: rgba(100, 250, 255, 0.7);
+    --border: rgb(100, 250, 255);
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
   }

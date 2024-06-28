@@ -8,7 +8,10 @@ import portfolioss from "../assets/images/portfolio-ss.png";
 const Projects = forwardRef((props, ref) => {
   return (
     <div className="section" ref={ref}>
-      <h1>My Projects</h1>
+      <div className="projects-heading">
+        <h1>My Projects</h1>
+        <a href="https://github.com/Jwoll2004" target="_blank" rel="noreferrer"> View all projects</a>
+      </div>
       <div className="vertical-card-container">
         <div className="card">
           <div className="icon-text">

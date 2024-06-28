@@ -1,0 +1,49 @@
+.footer {
+	margin: 20px 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	border: none;
+}
+
+.upper-footer {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.footer-columns {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+a {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+		
+}
+
+.icons {
+	height: 25px;
+}
+
+body:not(.dark) .monoicons {
+	filter: invert(1);
+  }
+
+.footer-columns a {
+	font-family: GatwickRegular;
+	text-decoration: underline;
+	text-underline-offset: 7px;
+	text-decoration-color: var(--primary-underline);
+}
+
+.footer-columns p {
+	font-family: GatwickBold;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}

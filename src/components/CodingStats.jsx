@@ -9,7 +9,7 @@ const CodingStats = forwardRef((props, ref) => {
   return (
     <div className="section" ref={ref}>
       <h1>Coding Stats</h1>
-      <div className="vertical-card-container">
+      <div className="vertical-card-container codingstats">
         <Leetcode />
         <Codeforces />
       </div>

@@ -1,34 +1,83 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import "../styles/Hero.css";
-import heroImage from '../assets/images/profile.jpg';
+import heroImage from "../assets/images/profile.jpg";
+import moon from "../assets/images/moon.png";
+import sun from "../assets/images/sun.svg";
 
-function Hero({ projectsRef }) {
+function Hero({ projectsRef, codingRef, contactRef }) {
   const aboutMeRef = useRef(null);
 
+  const scrollToRefWithOffset = (ref) => {
+    const yOffset = -50; // Offset of 50px
+    const yPosition =
+      ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: yPosition, behavior: "smooth" });
+  };
+
   const scrollToAboutMe = () => {
-    aboutMeRef.current.scrollIntoView({ behavior: 'smooth' });
+    scrollToRefWithOffset(aboutMeRef);
   };
 
   const scrollToProjects = () => {
-    projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+    scrollToRefWithOffset(projectsRef);
   };
+
+  const scrollToCoding = () => {
+    scrollToRefWithOffset(codingRef);
+  };
+
+  const scrollToContact = () => {
+    scrollToRefWithOffset(contactRef);
+  };
+
+  useEffect(() => {
+    const checkbox = document.getElementById("toggle");
+    const toggleDarkMode = () => {
+      document.body.classList.toggle("dark");
+    };
+
+    if (checkbox) {
+      checkbox.addEventListener("change", toggleDarkMode);
+    }
+
+    return () => {
+      if (checkbox) {
+        checkbox.removeEventListener("change", toggleDarkMode);
+      }
+    };
+  }, []);
 
   return (
     <div className="hero">
       <div className="header">
         <div className="left-header">
-          <a className="header-link transparent-link" onClick={scrollToProjects}>
+          <a
+            className="header-link transparent-link"
+            onClick={scrollToProjects}
+          >
             My Projects
           </a>
           <a className="header-link transparent-link" onClick={scrollToAboutMe}>
             About Me
+          </a>
+
+          <a className="header-link transparent-link" onClick={scrollToCoding}>
+            Coding Stats
           </a>
         </div>
 
         <span className="header-name">Prajwal Tiwari</span>
 
         <div className="right-header">
-          <a className="header-link opaque-link">
+          <div className="light-dark-mode">
+            <input type="checkbox" id="toggle" className="checkbox" />
+            <label htmlFor="toggle" className="label">
+              <img src={moon} className="icon" alt="moon" />
+              <img src={sun} className="icon" alt="sun" />
+              <span className="ball"></span>
+            </label>
+          </div>
+          <a className="header-link opaque-link" onClick={scrollToContact}>
             Get in touch
           </a>
         </div>
@@ -42,15 +91,24 @@ function Hero({ projectsRef }) {
           </div>
           <div className="hero-description">
             <p className="hero-description-text">
-              I am a 3rd year engineering student pursuing Computer Engineering from DTU, 
-              with a passion for building web applications.
+              I am a 3rd year engineering student pursuing Computer Engineering
+              from DTU, with a passion for building web applications.
             </p>
           </div>
           <div className="hero-cta">
-            <a href="#projects" className="hero-cta-link opaque-link" onClick={scrollToProjects}>
+            <a
+              href="#projects"
+              className="hero-cta-link opaque-link"
+              onClick={scrollToProjects}
+            >
               My Projects
             </a>
-            <a href="https://docs.google.com/document/d/1QjCiUKMlM2qyn69KUYnCEJLGmz5DOpxT8uToxOCLtQw/edit?usp=sharing" className="hero-cta-link outline-link" target="_blank" rel="noreferrer">
+            <a
+              href="https://docs.google.com/document/d/1QjCiUKMlM2qyn69KUYnCEJLGmz5DOpxT8uToxOCLtQw/edit?usp=sharing"
+              className="hero-cta-link outline-link"
+              target="_blank"
+              rel="noreferrer"
+            >
               Resume
             </a>
           </div>
