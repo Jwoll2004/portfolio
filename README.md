@@ -1,3 +1,15 @@
+# My Portfolio
+
+This is my personal portfolio website. It showcases my skills, projects, and profiles on competitive programming platforms (Leetcode, Codeforces). The project is built using HTML, CSS, JavaScript, and React.js. 
+For fetching the profile statistics from Leetcode and Codeforces, I have utilised two APIs: [Leetcode API- @Arghya Das](https://github.com/alfaarghya/alfa-leetcode-api) and [Codeforces API](https://codeforces.com/apiHelp).
+
+For better user experience, I later added a Light/Dark mode theme toggle button as well.
+
+- [Live Preview](https://portfolio-jwacker.vercel.app/)
+ 
+![demo screenshot](src/assets/images/portfolio-ss.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
