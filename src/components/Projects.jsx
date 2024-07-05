@@ -22,14 +22,14 @@ const Projects = forwardRef((props, ref) => {
             <div className="project-description">
               <p>
                 Resume Builder is a web application that allows users to create
-                a professional resume in minutes. Users can choose from a
-                variety of templates and customize the content to suit their
-                needs.
+                a professional resume in minutes. Users can add, edit, and
+                remove sections to customize their resume. The application also
+                provides a live preview of the resume as it is being built.
+                
               </p>
               <p>
                 The application is built using React, HTML, CSS, and JavaScript.
-                The resume data is stored in local storage, so users can return
-                to their resume at any time.
+                The users can download the resume in PDF format once they are done.
               </p>
             </div>
 
@@ -66,12 +66,24 @@ const Projects = forwardRef((props, ref) => {
           <div className="project-details">
             <div className="project-description">
               <p>
-                This is my personal portfolio website. It showcases my technical
-                skills, projects, and contact information.
+              This is my personal portfolio website. It showcases my skills, projects, and profiles on competitive programming platforms (Leetcode, Codeforces). 
               </p>
               <p>
-                The website is built using React, HTML, CSS, and JavaScript. It
-                is fully responsive and optimized for mobile devices.
+                The website is built using React, HTML, CSS, and JavaScript. 
+                <br />
+                For fetching the profile statistics from Leetcode and Codeforces, I have utilised two APIs: 
+                <br />
+                <span className="api-link">
+                  <a href="https://github.com/alfaarghya/alfa-leetcode-api" target="_blank" rel="noreferrer">
+                    Leetcode API by Arghya Das
+                  </a>
+                </span>
+                <span className="api-link">
+                  <a href="https://codeforces.com/apiHelp" target="_blank" rel="noreferrer">
+                    Codeforces API
+                  </a>
+                </span>
+                It also has a dark mode toggle button for better user experience.
               </p>
             </div>
 

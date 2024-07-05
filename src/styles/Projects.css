@@ -29,3 +29,15 @@
   display: flex;
   gap: 20px;
 }
+
+.project-description a {
+  font-family: GatwickSans, sans-serif;
+  font-size: 14px;
+  width: max-content;
+  border-bottom: 1px solid var(--foreground);
+  margin-bottom: 2px;
+
+  /* to prevent next p text from wrapping to next line */
+  white-space: nowrap;
+
+}
