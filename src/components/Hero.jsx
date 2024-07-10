@@ -108,7 +108,7 @@ function Hero({ projectsRef, codingRef, contactRef }) {
               My Projects
             </a>
             <a
-              href="https://drive.google.com/file/d/1-DaH3jR1I8n3c06SBI_mHMmlJ34JpFAs/view?usp=sharing"
+              href="https://docs.google.com/document/d/1UGOB68g4iL1_iRASbiw7FtIxn5kNOOVsWckC69iSIiY/edit?usp=sharing"
               className="hero-cta-link outline-link"
               target="_blank"
               rel="noreferrer"
