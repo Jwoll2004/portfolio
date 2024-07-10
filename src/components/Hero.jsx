@@ -91,7 +91,7 @@ function Hero({ projectsRef, codingRef, contactRef }) {
           </div>
           <div className="hero-description">
             <p className="hero-description-text">
-            I am a 3rd year Computer Engineering student at DTU, Delhi. I enjoy coding and web development, with a keen interest in learning new technologies. 
+            I am a 3rd year Computer Science Engineering student at DTU, Delhi. I enjoy coding and web development, with a keen interest in learning new technologies. 
             <br />
             <br />
             I am also a competitive programmer, participating in contests on platforms like Codeforces and Leetcode. 
