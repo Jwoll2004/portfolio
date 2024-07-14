@@ -18,136 +18,62 @@ import tech from "../assets/images/tech.png";
 import git from "../assets/images/git.svg";
 import vscode from "../assets/images/vscode.svg";
 import mysql from "../assets/images/sql.png";
+import SkillCard from "./SkillCard";
 
 const TechnicalSkills = () => {
+  const skillCategories = [
+    {
+      icon: proglang,
+      title: "Programming Languages",
+      skills: [
+        { icon: cpp, name: "C++" },
+        { icon: python, name: "Python" },
+        { icon: js, name: "Javascript" },
+      ],
+    },
+    {
+      icon: web,
+      title: "Web Development",
+      skills: [
+        { icon: html, name: "HTML" },
+        { icon: css, name: "CSS" },
+        { icon: react, name: "React" },
+      ],
+    },
+    {
+      icon: core,
+      title: "Core Subjects",
+      skills: [
+        { icon: ds, name: "Data Structures" },
+        { icon: algo, name: "Algorithms" },
+        { icon: os, name: "Operating Systems" },
+        { icon: dbms, name: "DBMS" },
+        { icon: oop, name: "OOP" },
+      ],
+    },
+    {
+      icon: tech,
+      title: "Tools & Technologies",
+      skills: [
+        { icon: git, name: "Git" },
+        { icon: vscode, name: "VS Code" },
+        { icon: mysql, name: "MySQL" },
+      ],
+    },
+  ];
+
   return (
     <div className="section">
       <h1>Technical Skills</h1>
       <div className="skills card-container">
-        <div className="card">
-          <h3>
-          <div className="skill-heading icon-text">
-            <img src={proglang} alt="Programming Languages" className="icon" />
-            Programming Languages
-          </div>
-          </h3>
-          <ul className="skills-list">
-            <li>
-              <div className="icon-text">
-                <img src={cpp} alt="C++" className="icon" />
-                C++
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={python} alt="Python" className="icon" />
-                Python
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={js} alt="Javascript" className="icon" />
-                Javascript
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div className="card">
-          <h3>
-            <div className="skill-heading icon-text">
-              <img src={web} alt="Web Development" className="icon" />
-              Web Development
-            </div>
-          </h3>
-          <ul className="skills-list">
-            <li>
-              <div className="icon-text">
-                <img src={html} alt="HTML" className="icon" />
-                HTML
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={css} alt="CSS" className="icon" />
-                CSS
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={react} alt="React" className="icon" />
-                React
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div className="card">
-          <h3>
-            <div className="skill-heading icon-text">
-              <img src={core} alt="Core Subjects" className="icon" />
-              Core Subjects
-            </div>
-          </h3>
-          <ul className="skills-list">
-            <li>
-              <div className="icon-text">
-                <img src={ds} alt="Data Structures" className="icon" />
-                Data Structures
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={algo} alt="Algorithms" className="icon" />
-                Algorithms
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={os} alt="Operating Systems" className="icon" />
-                Operating Systems
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={dbms} alt="DBMS" className="icon" />
-                DBMS
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={oop} alt="OOP" className="icon" />
-                OOP
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div className="card">
-          <h3>
-            <div className="skill-heading icon-text">
-              <img src={tech} alt="Tools & Technologies" className="icon" />
-              Tools & Technologies
-            </div>
-          </h3>
-          <ul className="skills-list">
-            <li>
-              <div className="icon-text">
-                <img src={git} alt="Git" className="icon" />
-                Git
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={vscode} alt="VS Code" className="icon" />
-                VS Code
-              </div>
-            </li>
-            <li>
-              <div className="icon-text">
-                <img src={mysql} alt="MySQL" className="icon" />
-                MySQL
-              </div>
-            </li>
-          </ul>
-        </div>
+        {skillCategories.map((category, index) => (
+          <SkillCard
+            key={index}
+            icon={category.icon}
+            title={category.title}
+            skills={category.skills}
+          />
+        ))}
       </div>
     </div>
   );
