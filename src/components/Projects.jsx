@@ -25,18 +25,7 @@ const Projects = forwardRef((props, ref) => {
       description: "This is my personal portfolio website. It showcases my skills, projects, and profiles on competitive programming platforms (Leetcode, Codeforces).",
       details: `The website is built using React, HTML, CSS, and JavaScript.
                 For fetching the profile statistics from Leetcode and Codeforces, I have utilised two APIs:
-                <br />
-                <span className="api-link">
-                  <a href="https://github.com/alfaarghya/alfa-leetcode-api" target="_blank" rel="noreferrer">
-                    Leetcode API by Arghya Das
-                  </a>
-                </span>
-                <span className="api-link">
-                  <a href="https://codeforces.com/apiHelp" target="_blank" rel="noreferrer">
-                    Codeforces API
-                  </a>
-                </span>
-                It also has a dark mode toggle button for better user experience.`,
+                Leetcode API (by Arghya Das) and Codeforces API (official Codeforces API). It also has a dark mode toggle button for better user experience.`,
       screenshot: portfolioss,
       codeLink: "https://github.com/Jwoll2004/portfolio",
       demoLink: "https://portfolio-jwacker.vercel.app/",
